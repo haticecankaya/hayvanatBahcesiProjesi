@@ -1,7 +1,7 @@
 #First hunting process then breeding process 
 # The animals can be locate same location.
 # Hunting order: Hunter, Lion, Wolf
-# Breeding order: Sheep,Cow,Chicken, Lion
+# Breeding order: Sheep,Cow,Chicken,Wolf Lion
 # Process continue until  the number 1000 is exceeded.
 # For controling the process, program write every step console.
 # OOP will be used for the maintenance process
@@ -72,29 +72,75 @@ class Animal:
             self.breedingUnitNumber=3
             self.motionUnitNumber=1
         
-    def show_data(self):
-        print("Tür:", self.animalType)
-        print("LocateX:", self.locateX)
-        print("LocateY:", self.locateY)
-        print("MotionUnitNumber:", self.motionUnitNumber)
-        print("Gender:", self.)
 
-# Örnek kullanım
-obj1=Animal(animalType="Wolf", locateX="8",locateY=0,gender=chooseRandomGender())
-obj1.show_data()
+def show_data(Animal):
+  print("***************************************************")
+  print("Tür:", Animal.animalType)
+  print("LocateX:", Animal.locateX)
+  print("LocateY:", Animal.locateY)
+  print("MotionUnitNumber:", Animal.motionUnitNumber)
+  print("Gender:", Animal.gender)
 
-obj1=Animal(animalType="Hunter", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender=chooseRandomGender())
-obj1.show_data()
+allAnimals=[]
+allHunters=[]
 
-obj1=Animal(animalType="Lion", locateX=0,locateY=0,gender="F")
-obj1.show_data()
+def createFirstAnimals(hunter, sheepF, sheepM, cowF, cowM, chickenF, chickenM, wolfF, wolfM, lionF, lionM):
+   #createFirstAnimals(hunter, sheepFemale, sheepMale, CowF, CowM, ChickenF, ChickenM, WolfF, WolfM, LionF, LionM):
+  #1, 15, 15, 10, 10, 10, 10, 5, 5, 4, 4
+  
+  for i in range(hunter):
+    yeni_nesne = Animal(animalType="Hunter", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="F")
+    allAnimals.append(yeni_nesne)
+    allHunters.append(yeni_nesne)
+  
+  for i in range(sheepF):
+    yeni_nesne = Animal(animalType="Sheep", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="F")
+    allAnimals.append(yeni_nesne)
 
-obj1=Animal(animalType="Sheep", locateX=0,locateY=0,gender="F")
-obj1.show_data()
+  for i in range(sheepM):
+    yeni_nesne = Animal(animalType="Sheep", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="M")
+    allAnimals.append(yeni_nesne)
 
-obj1=Animal(animalType="Cow", locateX=0,locateY=0,gender="F")
-obj1.show_data()
+  for i in range(cowF):
+    yeni_nesne = Animal(animalType="Cow", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="F")
+    allAnimals.append(yeni_nesne)
 
-obj1=Animal(animalType="Chicken", locateX=0,locateY=0,gender="F")
-obj1.show_data()
+  for i in range(cowM):
+    yeni_nesne = Animal(animalType="Cow", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="M")
+    allAnimals.append(yeni_nesne)
+
+  for i in range(chickenF):
+    yeni_nesne = Animal(animalType="Chicken", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="F")
+    allAnimals.append(yeni_nesne)
+  
+  for i in range(chickenM):
+    yeni_nesne = Animal(animalType="Chicken", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="M")
+    allAnimals.append(yeni_nesne)
+
+  for i in range(lionF):
+    yeni_nesne = Animal(animalType="Lion", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="F")
+    allAnimals.append(yeni_nesne)
+    allHunters.append(yeni_nesne)
+    
+  for i in range(lionM):
+    yeni_nesne = Animal(animalType="Lion", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="M")
+    allAnimals.append(yeni_nesne)
+    allHunters.append(yeni_nesne)
+    
+  for i in range(wolfF):
+    yeni_nesne = Animal(animalType="Wolf", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="F")
+    allAnimals.append(yeni_nesne)
+    allHunters.append(yeni_nesne)
+    
+  for i in range(wolfM):
+    yeni_nesne = Animal(animalType="Wolf", locateX=chooseRandomLocation(),locateY=chooseRandomLocation(),gender="M")
+    allAnimals.append(yeni_nesne)
+    allHunters.append(yeni_nesne)
+    
+createFirstAnimals(1, 2, 3, 1, 2, 4, 2, 5, 6, 2, 1)
+
+
+for i in allAnimals:
+  if i.animalType=="Lion":
+     show_data(i)
 
