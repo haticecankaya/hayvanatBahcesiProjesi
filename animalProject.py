@@ -208,5 +208,18 @@ def huntingTime(animalList, hunterList):
 
 #huntingTime() works but the code is difficult to maintain. There is a danger of being affected by any change.
 
-huntingTime(allAnimals,allHunters)
-
+def checkBreedingConditions(one,two):
+  if one.animalType == two.animalType and one.gender != two.gender:
+     if findDistance(one,two) <=3:
+        return True
+     else:
+        return False
+  else:
+     return False
+  
+# checkBreedingConditions() Test Block
+# change **this areas** and try this code for control
+# obj1=Animal(**animalType="Wolf", locateX=0,locateY=7,gender="M"**)
+# obj2=Animal(**animalType="Wolf", locateX=3,locateY=7,gender="F"**)
+# print(checkBreedingConditions(obj1,obj2))
+  
